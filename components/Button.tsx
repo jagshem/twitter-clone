@@ -31,20 +31,16 @@ const Button: React.FC<ButtonProps> = ({
             ${outline ? 'bg-transparent' : ''}
             ${outline ? 'bg-white' : ''}
             ${outline ? 'text-white' : ''}
-            rounded-2xl
+            rounded-3xl
             font-semibold
-            transition-property: all;
-            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-            transition-duration: 150ms;
             duration-200
             ease-in-out
-            hover:bg-primary-600
-            hover:border-primary-900
-            hover:rounded-3xl
+            hover:opacity-80
             focus:outline-none
             focus:ring-2
             focus:ring-primary-500
             focus:ring-opacity-50
+            transition-all
         `}
         onClick={onClick}
         disabled={disabled}

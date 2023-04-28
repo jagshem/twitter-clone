@@ -93,16 +93,22 @@ const Modal: React.FC<ModalProps> = ({
                             <h3 className=" text-2xl font-semibold text-white"> {title} </h3>
                             <button
                             className="
-                            p-1
-                            ml-auto
-                            border-0
-                            text-white
-                            hover:opacity-70
-                            transition
+                                p-1
+                                ml-auto
+                                border-0
+                                text-white
+                                justify-center
+                                items-center
+                                bg-[size:200px_100px]
+                                text-center
+                                hover:opacity-70
+                                hover:bg-gray-800
+                                rounded-full
+                                transition-all
                             "
                             onClick={handleClose}
                             >
-                                <AiOutlineClose size={20} />
+                                <AiOutlineClose size={20} className="mt-1 mr-1 ml-1 mb-1"/>
                             </button>
                         </div>
                         {/* Body */}
