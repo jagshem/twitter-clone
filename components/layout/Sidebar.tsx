@@ -2,7 +2,7 @@ import SidebarItem from './SidebarItem'
 import SidebarLogo from './SidebarLogo'
 import SidebarTweetButton from './SidebarTweetButton'
 
-import useCurrentUser from '../../hooks/useCurrentUser.ts'
+import useCurrentUser from '../../hooks/useCurrentUser'
 
 import { BiLogOut } from 'react-icons/bi'
 import { BsHouseFill, BsBellFill } from 'react-icons/bs'

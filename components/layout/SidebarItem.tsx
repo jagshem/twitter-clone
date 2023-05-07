@@ -1,8 +1,8 @@
 import { IconType } from 'react-icons'
 import { useCallback } from 'react'
 import { useRouter } from 'next/router'
-import useCurrentUser from '../../hooks/useCurrentUser.ts'
-import useLoginModal from '../../hooks/useLoginModal.ts'
+import useCurrentUser from '../../hooks/useCurrentUser'
+import useLoginModal from '../../hooks/useLoginModal'
 
 interface SidebarItemProps {
   label: string
