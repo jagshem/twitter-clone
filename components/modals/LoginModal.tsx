@@ -1,10 +1,11 @@
 import useLoginModal from '@components/hooks/useLoginModal'
 import useRegisterModal from '@components/hooks/useRegisterModal'
 import { useCallback, useState } from 'react'
+import { signIn } from 'next-auth/react'
 
 import Input from '../Input'
 import Modal from '../Modal'
-import { signIn } from 'next-auth/react'
+import { toast } from 'react-hot-toast'
 
 const LoginModal = () => {
   const loginModal = useLoginModal()
@@ -18,15 +19,29 @@ const LoginModal = () => {
     try {
       setIsLoading(true)
 
-      await signIn('credentials', {
+      const result = await signIn('credentials', {
         email,
         password,
+        redirect: false,
       })
 
-      loginModal.onClose()
+      if (result.error) {
+        toast.error(result.error)
+        setIsLoading(false)
+      } else {
+        loginModal.onClose()
+        toast.success('Giriş başarılı!')
+        setTimeout(() => {
+          signIn('credentials', {
+            email,
+            password,
+            callbackUrl: window.location.href,
+          })
+        }, 1000)
+      }
     } catch (error) {
       console.log(error)
-    } finally {
+      toast.error('Bir hata oluştu.')
       setIsLoading(false)
     }
   }, [loginModal, email, password])
